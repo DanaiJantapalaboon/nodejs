@@ -3,7 +3,7 @@ const chalk = require("chalk");
 const debug = require("debug")("app");
 const morgan = require("morgan");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT;
 const path = require("path");
 
 app.use(morgan("combined"));
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 
 })
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     //console.log("Listening on port" + chalk.green(" : " + port));
-    debug("Listening on port" + chalk.green(" : " + port));
+    debug("Listening on PORT" + chalk.green(" : " + PORT));
 })
